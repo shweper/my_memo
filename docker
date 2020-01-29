@@ -1,0 +1,21 @@
+docker
+	docker ps							Список бегущих контейнеров
+	docker ps -a						Список всех контейнеров
+	docker images 						список локальных images
+
+	docker search tomcat				Найти images tomcat in docker hub
+	docker pull tomcat					Скачать images tomcat in docker hub
+
+	docker run 							Запуск контейнера
+		-it								В интерактивном режиме
+		-d 								в НЕ интерактивном режиме(background)
+		-p 80:8080						Прокинуть порт с 8080 на контейнере	в 80 на хосте
+
+	docker build -t myimage:latest . 	Создать image с именем myimage:latest из Dockerfile в текуцщей дарриктории
+
+	docker rm 1234 						удалить контейнер с ID 1234...
+	docker rmi 1234						удалить локальный images с ID 1234...
+
+	docker exec -it 1234 /bin/bash 		зайти на бегущий контейнер с ID 1234... в среду /bin/bash
+
+	docker comit 1234 newimage_v2:latest	Создать image c именем newimage_v2:latest из контейнера с ID 1234...
